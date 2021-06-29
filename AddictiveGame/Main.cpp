@@ -6,7 +6,7 @@ ifstream f("input.txt");
 ofstream g("output.txt");
 
 int main() {
-	int number;
+	int number, color;
 	Grid grid = Grid();
 	f >> number;
 	grid.setRows(number);
@@ -15,26 +15,14 @@ int main() {
 
 	int count;
 	f >> count;
-	while (count--) {
-		int x = 1;
-		int y = 1;
-		f >> number;
-		if (number > grid.getColumns()) {
-			x = number / grid.getColumns();
-			if (number % grid.getColumns() > 0) {
-				x++;
-			}
-		}
-
-		number = number % grid.getColumns();
-		if (number == 0) {
-			y = grid.getColumns();
-		}
-		if (number > 1) {
-			y = number;
-		}
-
-		g << x << " " << y << " ";
+	for(int i = 0;i < count; i++){
+		f >> number  >> color;
+		//This is the answer for level 1
+		//g << grid.getPositionOnX(number) << " " << grid.getPositionOnY(number) << " ";
+		grid.addDot(color, number);
+	}
+	for (int i = 1; i <= count / 2; i++) {
+		g << grid.manhattanDistance(i) << " ";
 	}
 	return 0;
 }
