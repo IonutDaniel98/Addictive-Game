@@ -56,7 +56,7 @@ void Grid::addDot(int color, int number)
 int Grid::manhattanDistance(int color)
 {
     int dist = 0;
-    int val1, val2;
+    int val1 = 0, val2 = 0;
     bool one = false, two = false;
     for (int i = 0; i < dots.size() && two == false; i++) {
         if (dots[i].first == color) {
@@ -92,10 +92,26 @@ int Grid::manhattanDistance(int color)
 void Grid::initializeGrid()
 {
     std::vector<int> row;
-    for (int i = 1; i <= columns; i++) {
+    for (int i = 0; i <= columns+1; i++) {
         row.push_back(0);
     }
-    for (int j = 1; j <= rows; j++) {
+    for (int j = 0; j <= rows+1; j++) {
         actualGrid.push_back(row);
     }
+}
+
+void Grid::completeGrid()
+{
+    int x, y;
+
+    for (int i = 0; i < dots.size(); i++) {
+        x = getPositionOnX(dots[i].second);
+        y = getPositionOnY(dots[i].second);
+        actualGrid[x][y] = dots[i].first;
+    }
+}
+
+int Grid::stateOfPosition(int x, int y)
+{
+    return actualGrid[x][y];
 }

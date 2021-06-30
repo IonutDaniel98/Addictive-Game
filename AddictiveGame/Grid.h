@@ -18,5 +18,7 @@ public:
 	void addDot(int color, int number);
 	int manhattanDistance(int color);
 	void initializeGrid();
+	void completeGrid();
+	int stateOfPosition(int x, int y);
 };
 

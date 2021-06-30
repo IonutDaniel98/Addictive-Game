@@ -1,2 +1,6 @@
-﻿  Main.cpp
+﻿  Grid.cpp
+C:\Users\John\Desktop\Projects\AddictiveGame\AddictiveGame\Grid.cpp(61,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\John\Desktop\Projects\AddictiveGame\AddictiveGame\Grid.cpp(107,23): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+  Generating Code...
   AddictiveGame.vcxproj -> C:\Users\John\Desktop\Projects\AddictiveGame\Debug\AddictiveGame.exe
